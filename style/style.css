@@ -1,0 +1,32 @@
+* {
+padding: 0px;
+margin: 0px;
+box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(83, 109, 81);
+    text-align: center;
+    padding-top:30px;
+    padding-bottom: 30px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 4rem;
+
+}
+
+nav {
+text-align: center;
+padding: 10px;
+padding-bottom: 10px;
+background-color: rgb(83, 99, 77);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
