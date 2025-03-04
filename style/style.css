@@ -4,29 +4,79 @@ margin: 0px;
 box-sizing: border-box;
 }
 
+body {
+    background-image: url(../src/images/grunge-wall-texture.jpg);
+    background-color: #cccccc00;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
 header {
-    background-color: rgb(83, 109, 81);
+    background-color: rgb(255, 255, 255);
     text-align: center;
     padding-top:30px;
     padding-bottom: 30px;
 }
 
-header a {
-    text-decoration: none;
-    color: white;
-    font-size: 4rem;
+#main_header {
+    width: 20%;
+    height: auto;
+}
 
+#other_header {
+    width: 15%;
+    height: auto;
 }
 
 nav {
 text-align: center;
-padding: 10px;
-padding-bottom: 10px;
-background-color: rgb(83, 99, 77);
+display: flex;
+justify-content: center;
+flex-wrap: nowrap;
+gap: 0px;
 }
 
-nav a {
+.box {
+    display: flex;
+    flex-grow: 1;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#blackbox {
+    background-color: black;
+}
+
+#yellowbox {
+    background-color: rgb(255, 196, 0);
+}
+
+main h1 {
+    padding-top: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+main a {
     text-decoration: none;
-    color: white;
+
 }
 
+#go_button {
+    border: 1px solid rgb(255, 225, 0);
+    background-color: rgb(255, 0, 0);
+    padding: 1em 1em 1em 1em;
+    border-radius: 100px;
+    margin-top: 5%;
+    font-size: 2.5rem;
+}
+
+#go_button_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
