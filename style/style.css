@@ -40,9 +40,18 @@ gap: 0px;
 
 .box {
     display: flex;
+    display: block;
     flex-grow: 1;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.box a {
+    text-decoration: none;
+    align-items: center;
+    color: aliceblue;
+    font-size: 1.5rem;
+    text-shadow: #000000 0px 0px 10px;
 }
 
 #blackbox {
@@ -79,4 +88,79 @@ main a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.login_main {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 700px;
+}
+
+.login_box {
+    background-color: white;
+    height: 500px;
+    width: 350px;
+    border-radius: 20px;
+    display: block;
+    justify-content: center;    
+}
+
+.login_box h2 {
+margin-top: 10%;
+margin-bottom: 10%;
+font-size: 300%;
+text-align: center;
+}
+
+.login_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input_field {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10%;
+}
+
+.input_field input {
+    width: 80%;
+    height: 50px;
+    font-size: 115%;
+    padding-right: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(232, 232, 232);
+    border-radius: 30px
+}
+
+#remember_me_register {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15% 25% 15%;
+    
+    
+}
+
+#register_in_login {
+    font-size: 20px;
+}
+
+form a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter_button {
+    padding: 20px 60px 20px 60px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(232, 232, 232);
+    font-size: 20px;
 }
