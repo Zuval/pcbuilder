@@ -62,8 +62,15 @@ gap: 0px;
     background-color: rgb(255, 196, 0);
 }
 
+.site_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+    }
+
 main h1 {
-    padding-top: 100px;
+    padding-top: 10%;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -90,13 +97,6 @@ main a {
     justify-content: center;
 }
 
-.login_main {
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 700px;
-}
-
 .login_box {
     background-color: white;
     height: 500px;
@@ -111,13 +111,6 @@ margin-top: 10%;
 margin-bottom: 10%;
 font-size: 300%;
 text-align: center;
-}
-
-.login_content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .input_field {
@@ -142,13 +135,19 @@ text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15% 25% 15%;
-    
-    
+    padding: 0 12.5% 25% 12.5%;
 }
 
 #register_in_login {
     font-size: 20px;
+}
+
+.align_rmr label {
+    font-size: 20px;
+}
+
+#remember_me_btn {
+    padding-right: 100px;
 }
 
 form a {
@@ -164,3 +163,13 @@ form a {
     background-color: rgb(232, 232, 232);
     font-size: 20px;
 }
+
+.contact_box {
+    background-color: white;
+    height: 600px;
+    width: 850px;
+    border-radius: 20px;
+    display: block;
+    justify-content: center;
+}
+
