@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>Contact Us</title>
 </head>
 <body>
@@ -48,9 +51,23 @@
        <div class="contact_box">
         <h1>צרו קשר</h1>
         <form action="">
-    <label for="email">אימייל</label>
-    <input type="text" name="email" placeholder="הכנס/י כתובת אימייל" class="input_field">
-    <button type="submit">שלח/י</button>
+    <div class="contact_input">
+        <label for="">שם</label>
+        <input type="text" name="name" placeholder="הכנס/י שם מלא">
+    </div>
+    <div class="contact_input">
+        <label for="email">אימייל</label>
+        <input type="email" name="email" placeholder="הכנס/י כתובת אימייל">   
+    </div>
+    <div class="contact_input">
+        <label for="text">נושא הפנייה</label>
+        <input type="text" name="subject" placeholder="על מה מדברת הפנייה?" >
+    </div>
+       <div class="contact_input">
+        <label for="email">תוכן הפנייה</label>
+        <input type="email" name="email" placeholder="טקסט חופשי">
+    </div>
+        <a href=""><button type="submit" class="enter_button">שלח/י</button></a>
    </form>
 </div> 
 </main>

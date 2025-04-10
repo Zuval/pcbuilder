@@ -10,6 +10,9 @@ body {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
+    min-height: auto;
+    min-width: auto;
 }
 
 
@@ -70,7 +73,6 @@ gap: 0px;
     }
 
 main h1 {
-    padding-top: 10%;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -82,28 +84,14 @@ main a {
 
 }
 
-#go_button {
-    border: 1px solid rgb(255, 225, 0);
-    background-color: rgb(255, 0, 0);
-    padding: 1em 1em 1em 1em;
-    border-radius: 100px;
-    margin-top: 5%;
-    font-size: 2.5rem;
-}
-
-#go_button_div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .login_box {
     background-color: white;
     height: 500px;
     width: 350px;
     border-radius: 20px;
     display: block;
-    justify-content: center;    
+    justify-content: center;
+    box-shadow: #000000 0px 0px 10px;
 }
 
 .login_box h2 {
@@ -113,15 +101,16 @@ font-size: 300%;
 text-align: center;
 }
 
-.input_field {
+.login_input_field {
     justify-content: center;
     align-items: center;
     display: flex;
     margin-bottom: 10%;
 }
 
-.input_field input {
+.login_input_field input {
     width: 80%;
+    font-family: 'Open Sans', sans-serif;
     height: 50px;
     font-size: 115%;
     padding-right: 10px;
@@ -162,6 +151,7 @@ form a {
     border: none;
     background-color: rgb(232, 232, 232);
     font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .contact_box {
@@ -171,5 +161,72 @@ form a {
     border-radius: 20px;
     display: block;
     justify-content: center;
+    box-shadow: #000000 0px 0px 10px;
 }
 
+.contact_box h1 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: block;
+}
+
+.contact_box form {
+    justify-content: center;
+}
+
+.contact_input {
+margin-bottom: 2%;
+justify-content: center;
+}
+
+.contact_input label {
+    display: inline-block;
+        width: 110px;
+        color: #777777;
+}
+
+.contact_input input {
+    width: 80%;
+    height: 50px;
+    font-size: 115%;
+    padding-right: 10px;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    border: none;
+    background-color: rgb(232, 232, 232);
+    border-radius: 30px
+}
+
+#index_box_top {
+    margin: 5% 35% 1.5% 35% ;
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px 25px 10px 25px;
+    display: block;
+    justify-content: center;
+    box-shadow: #000000 0px 0px 10px;
+}
+
+#index_box_bottom {
+    margin: 0 25% 0 25%;
+    background-color: white;
+    border-radius: 30px;
+    padding: 12px 25px 12px 25px;
+    display: block;
+    justify-content: center;
+    box-shadow: #000000 0px 0px 10px;
+}
+
+#index_box_bottom h2 {
+    text-align: center;
+}
+
+.index_main img {
+    width: 20%;
+    height: auto;
+    display: block;
+    justify-content: center;
+    border-radius: 30px;
+    box-shadow: #000000 0px 0px 10px;
+    
+}
