@@ -53,19 +53,19 @@
         <form action="">
     <div class="contact_input">
         <label for="">שם</label>
-        <input type="text" name="name" placeholder="הכנס/י שם מלא">
+        <input type="text" name="name" placeholder="הכנס/י שם מלא" required>
     </div>
     <div class="contact_input">
         <label for="email">אימייל</label>
-        <input type="email" name="email" placeholder="הכנס/י כתובת אימייל">   
+        <input type="email" name="email" placeholder="הכנס/י כתובת אימייל" required>   
     </div>
     <div class="contact_input">
         <label for="text">נושא הפנייה</label>
-        <input type="text" name="subject" placeholder="על מה מדברת הפנייה?" >
+        <input type="text" name="subject" placeholder="על מה מדברת הפנייה?" required>
     </div>
        <div class="contact_input">
-        <label for="email">תוכן הפנייה</label>
-        <input type="email" name="email" placeholder="טקסט חופשי">
+        <label for="text">תוכן הפנייה</label>
+        <textarea name="message" placeholder="טקסט חופשי" draggable="false"  maxlength="165" required></textarea>
     </div>
         <a href=""><button type="submit" class="enter_button">שלח/י</button></a>
    </form>

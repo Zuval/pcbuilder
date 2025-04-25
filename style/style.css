@@ -88,6 +88,7 @@ main a {
     background-color: white;
     height: 500px;
     width: 350px;
+    margin-top: 5%;
     border-radius: 20px;
     display: block;
     justify-content: center;
@@ -158,10 +159,12 @@ form a {
     background-color: white;
     height: 600px;
     width: 850px;
+    margin-top: 5%;
     border-radius: 20px;
     display: block;
     justify-content: center;
     box-shadow: #000000 0px 0px 10px;
+    align-items: center;
 }
 
 .contact_box h1 {
@@ -183,6 +186,7 @@ justify-content: center;
     display: inline-block;
         width: 110px;
         color: #777777;
+        text-anchor: middle;
 }
 
 .contact_input input {
@@ -195,6 +199,54 @@ justify-content: center;
     border: none;
     background-color: rgb(232, 232, 232);
     border-radius: 30px
+}
+
+.contact_input textarea {
+    width: 80%;
+    height: 100px;
+    font-size: 115%;
+    padding: 10px 15px 0 15px;
+    margin-bottom: 2%;
+    resize: none;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    border: none;
+    background-color: rgb(232, 232, 232);
+    border-radius: 30px
+}
+
+.about_box {
+    background-color: white;
+    height: 550px;
+    width: 1000px;
+    margin-top: 5%;
+    border-radius: 20px;
+    display: block;
+    justify-content: center;
+    box-shadow: #000000 0px 0px 10px;
+    align-items: center;
+}
+
+.about_box h1 {
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+    display: block;
+}
+
+#about_text {
+justify-content: center;
+align-items: center;
+margin: 0 5% 0 5%;
+text-align: justify;
+}
+
+#upper_about {
+text-align: center;
+font-size: 1.8rem;
+}
+
+#about_text h2 {
+    margin-bottom: 2.5%;
 }
 
 #index_box_top {
@@ -221,12 +273,44 @@ justify-content: center;
     text-align: center;
 }
 
-.index_main img {
+#index_img {
+    justify-content: center;
+    display: flex;
+    margin-top: 1.5%;
+}
+
+#index_img img {
     width: 20%;
     height: auto;
-    display: block;
-    justify-content: center;
     border-radius: 30px;
     box-shadow: #000000 0px 0px 10px;
-    
+}
+
+
+.content_table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 2em;
+    text-align: right;
+    background-color: white;
+    height: auto;
+    width: 1000px;
+    margin-top: 5%;
+    border-radius: 20px;
+    display: block;
+    justify-content: center;
+    box-shadow: #000000 0px 0px 10px;
+    align-items: center;
+}
+
+th, td {
+    padding: 20px;
+}
+
+.white-tr {
+    background-color: white;
+}
+
+.gray-tr {
+    background-color:rgb(232, 232, 232);
 }
