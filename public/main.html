@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -11,8 +11,8 @@
 </head>
 <body>
     <header>
-        <a href="index.html">
-            <img src="../src/images/logo.png" alt="בנו מחשב!" draggable="false" id="other_header">
+        <a href="index">
+            <img src="logo.png" alt="בנו מחשב!" draggable="false" id="other_header">
         </a>
         </header>
     
@@ -26,16 +26,16 @@
             <div class="box" id="blackbox"></div>
             <div class="box" id="yellowbox"></div>
             <div class="box" id="blackbox">
-                <a href="index.html">בית</a>
+                <a href="index">בית</a>
             </div>
             <div class="box" id="yellowbox">
-                <a href="about.html">אודות</a>
+                <a href="about">אודות</a>
             </div>
             <div class="box" id="blackbox">
-                <a href="contact.html">צור קשר</a>
+                <a href="contact">צור קשר</a>
             </div>
             <div class="box" id="yellowbox">
-                <a href="login.html">התחבר</a>
+                <a href="login">התחבר</a>
             </div>
             <div class="box" id="blackbox"></div>
             <div class="box" id="yellowbox"></div>
@@ -48,7 +48,8 @@
            </nav>
        
            <main class="site_main">
-                <table class="content_table">
+                <div class="main_content">
+            <table class="content_table">
                     <tr class="white-tr">
                         <th>סוג החלק</th>
                         <th>בחירה</th>
@@ -57,47 +58,49 @@
                     </tr>
                     <tr class="gray-tr">
                         <td>מעבד</td>
-                        <td></td>
+                        <td><select name="cpu" id="cpu_select"></select></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr class="white-tr">
                     <td>כרטיס מסך</td>
-                    <td></td>
+                    <td><select name="gpu" id="gpu_select"></select></td>
                     <td></td>
                     <td></td>
                 </tr>
                     <tr class="gray-tr">
                         <td>לוח אם</td>
-                        <td></td>
+                        <td><select name="motherboard" id="motherboard_select"></select></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr class="white-tr">
                         <td>קירור</td>
-                        <td></td>
+                        <td><select name="cooling" id="cooling_select"></select></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr class="gray-tr">
                         <td>ספק כוח</td>
-                        <td></td>
+                        <td><select name="psu" id="psu_select"></select></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr class="white-tr">
                         <td>אחסון</td>
-                        <td></td>
+                        <td><select name="storage" id="storage_select"></select></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr class="gray-tr">
                         <td>מארז</td>
-                        <td></td>
+                        <td><select name="case" id="case_select"></select></td>
                         <td></td>
                         <td></td>
                     </tr>
                 </table>
+            </div>
            </main>
+           <script src="../app/app.js"></script>
 </body>
 </html>
