@@ -3,7 +3,7 @@ const app = express();
 const sqlite3 = require("sqlite3");
 const path = require("path");
 
-const database = new sqlite3.Database("users.db");
+const database = new sqlite3.Database(path.join(__dirname, "users.db"))
 
 app.use(express.static(path.join(__dirname, "../style")));
 app.use(express.static(path.join(__dirname, "../src/img")));
@@ -42,7 +42,7 @@ app.post("/register", (req, res) => {
   }
 
   database.run(
-    `INSERT INTO users (email, password) VALUES (?, ?)`,
+    `INSERT INTO users.db (email, password) VALUES (?, ?)`,
     [email, password],
     (err) => {
       if (err) {
