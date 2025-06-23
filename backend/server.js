@@ -1,21 +1,23 @@
 const express = require("express");
-const app = express();
-const sqlite3 = require("sqlite3");
+const session = require("express-session");
 const path = require("path");
+const database = require("./database/database");
 
-const database = new sqlite3.Database(path.join(__dirname, "users.db"))
+const app = express();
 
-app.use(express.static(path.join(__dirname, "../style")));
-app.use(express.static(path.join(__dirname, "../src/img")));
+app.use(session({
+  secret: "super-secret-key",
+  resave: false,
+  saveUninitialized: false,
+}));
+
+app.use(express.static(path.join(__dirname, "../style")));
+app.use(express.static(path.join(__dirname, "../src/img")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
-});
-
-app.get("/editor", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/main.html"));
 });
 
 app.get("/about", (req, res) => {
@@ -42,17 +44,60 @@ app.post("/register", (req, res) => {
   }
 
   database.run(
-    `INSERT INTO users.db (email, password) VALUES (?, ?)`,
+    `INSERT INTO users (email, password) VALUES (?, ?)`,
     [email, password],
     (err) => {
       if (err) {
         console.error(err);
-        return res.status(500).send("שגיאה בהרשמה");
+        return res.status(500).send("שגיאה בהרשמה או שהאימייל כבר קיים");
       }
-      res.send("ההרשמה התקבלה בהצלחה");
-      res.redirect('/login');
+      return res.redirect("/login");
     }
   );
+});
+
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+
+  database.get(
+    `SELECT * FROM users WHERE email = ? AND password = ?`,
+    [email, password],
+    (err, row) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send("שגיאה בהתחברות");
+      }
+
+      if (!row) {
+        return res.status(401).send("פרטי התחברות שגויים");
+      }
+
+      req.session.user = { id: row.id, email: row.email };
+      return res.redirect("/dashboard");
+    }
+  );
+});
+
+app.get("/dashboard", (req, res) => {
+  if (!req.session.user) {
+    return res.redirect("/login");
+  }
+  res.sendFile(path.join(__dirname, "../public/main.html"));
+});
+
+app.get("/session-info", (req, res) => {
+  if (req.session.user) {
+    res.json({ email: req.session.user.email });
+  } else {
+    res.status(401).json({ error: "Not logged in" });
+  }
+});
+
+app.get("/logout", (req, res) => {
+  req.session.destroy(err => {
+    if (err) return res.status(500).send("שגיאה ביציאה");
+    res.redirect("/login");
+  });
 });
 
 const PORT = 4000;

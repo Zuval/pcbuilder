@@ -8,6 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>Configurator</title>
+    <script>
+  fetch("/session-info")
+    .then(res => {
+      if (res.ok) return res.json();
+      else throw new Error("Not logged in");
+    })
+    .then(data => {
+      document.getElementById("email_display").textContent = data.email;
+    })
+    .catch(() => {
+      window.location.href = "/login";
+    });
+</script>
 </head>
 <body>
     <header>
@@ -26,7 +39,7 @@
             <div class="box" id="blackbox"></div>
             <div class="box" id="yellowbox"></div>
             <div class="box" id="blackbox">
-                <a href="index">בית</a>
+                <a href="/">בית</a>
             </div>
             <div class="box" id="yellowbox">
                 <a href="about">אודות</a>
@@ -48,6 +61,7 @@
            </nav>
        
            <main class="site_main">
+            <h2 id="user_email">מחובר כ: <span id="email_display">...</span></h2>
                 <div class="main_content">
             <table class="content_table">
                     <tr class="white-tr">
