@@ -1,120 +1,145 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Configurator</title>
-    <script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configurator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+ <script>
   fetch("/session-info")
-    .then(res => {
-      if (res.ok) return res.json();
-      else throw new Error("Not logged in");
-    })
+    .then(res => res.ok ? res.json() : Promise.reject("Not logged in"))
     .then(data => {
       document.getElementById("email_display").textContent = data.email;
+      
+      const authLink = document.getElementById("auth_link");
+      if (authLink) {
+        authLink.textContent = "התנתק";
+        authLink.href = "/logout";
+      }
+      
+      const registerLink = document.querySelector('a[href="register"]');
+      if (registerLink && registerLink.parentElement) {
+        registerLink.parentElement.style.display = "none";
+      }
     })
     .catch(() => {
       window.location.href = "/login";
     });
 </script>
+
 </head>
 <body>
-    <header>
-        <a href="/">
-            <img src="logo.png" alt="בנו מחשב!" draggable="false" id="other_header">
-        </a>
-        </header>
-    
-    <nav>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox">
-                <a href="/">בית</a>
-            </div>
-            <div class="box" id="yellowbox">
-                <a href="about">אודות</a>
-            </div>
-            <div class="box" id="blackbox">
-                <a href="contact">צור קשר</a>
-            </div>
-            <div class="box" id="yellowbox">
-                <a href="login">התחבר</a>
-            </div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-           </nav>
-       
-           <main class="site_main">
-            <h2 id="user_email">מחובר כ: <span id="email_display">...</span></h2>
-                <div class="main_content">
-            <table class="content_table">
-                    <tr class="white-tr">
-                        <th>סוג החלק</th>
-                        <th>בחירה</th>
-                        <th>וואט</th>
-                        <th>מחיר</th>
-                    </tr>
-                    <tr class="gray-tr">
-                        <td>מעבד</td>
-                        <td><select name="cpu" id="cpu_select"></select></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr class="white-tr">
-                    <td>כרטיס מסך</td>
-                    <td><select name="gpu" id="gpu_select"></select></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                    <tr class="gray-tr">
-                        <td>לוח אם</td>
-                        <td><select name="motherboard" id="motherboard_select"></select></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr class="white-tr">
-                        <td>קירור</td>
-                        <td><select name="cooling" id="cooling_select"></select></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr class="gray-tr">
-                        <td>ספק כוח</td>
-                        <td><select name="psu" id="psu_select"></select></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr class="white-tr">
-                        <td>אחסון</td>
-                        <td><select name="storage" id="storage_select"></select></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr class="gray-tr">
-                        <td>מארז</td>
-                        <td><select name="case" id="case_select"></select></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
-           </main>
-           <script src="../app/app.js"></script>
+  <header>
+    <a href="/"><img src="logo.png" alt="בנו מחשב!" draggable="false" id="other_header" /></a>
+  </header>
+
+  <nav>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox">
+      <a href="/">בית</a>
+    </div>
+    <div class="box" id="yellowbox">
+      <a href="about">אודות</a>
+    </div>
+    <div class="box" id="blackbox">
+      <a href="contact">צור קשר</a>
+    </div>
+    <div class="box" id="yellowbox">
+  <a href="login" id="auth_link">התחבר</a>
+</div>
+    <div class="box" id="blackbox">
+  <a href="register">הירשם</a>
+</div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+  </nav>
+
+  <main class="site_main">
+    <div class="email_display_box">
+      מחובר כ: <span id="email_display">...</span>
+    </div>
+
+    <div class="main_content">
+      <table class="content_table">
+        <tr>
+          <th>סוג החלק</th>
+          <th>בחירה</th>
+          <th>וואט</th>
+          <th>מחיר</th>
+        </tr>
+        <tr>
+          <td>מעבד</td>
+          <td class="select-cell"><select id="cpu_select" data-part-type="cpu"></select></td>
+          <td class="watt-cell"></td>
+          <td class="price-cell"></td>
+        </tr>
+        <tr>
+          <td>כרטיס מסך</td>
+          <td class="select-cell"><select id="gpu_select" data-part-type="gpu"></select></td>
+          <td class="watt-cell"></td>
+          <td class="price-cell"></td>
+        </tr>
+        <tr>
+          <td>לוח אם</td>
+          <td class="select-cell"><select id="motherboard_select" data-part-type="motherboard_select"></select></td>
+          <td class="watt-cell"></td>
+          <td class="price-cell"></td>
+        </tr>
+        <tr>
+          <td>קירור</td>
+          <td class="select-cell"><select id="cooling_select" data-part-type="cooling"></select></td>
+          <td class="watt-cell"></td>
+          <td class="price-cell"></td>
+        </tr>
+        <tr>
+          <td>ספק כוח</td>
+          <td class="select-cell"><select id="psu_select" data-part-type="psu"></select></td>
+          <td class="watt-cell"></td>
+          <td class="price-cell"></td>
+        </tr>
+        <tr>
+          <td>אחסון</td>
+          <td class="select-cell"><select id="storage_select" data-part-type="storage"></select></td>
+          <td class="watt-cell"></td>
+          <td class="price-cell"></td>
+        </tr>
+        <tr>
+          <td>מארז</td>
+          <td class="select-cell"><select id="case_select" data-part-type="case"></select>></td>
+          <td class="watt-cell"></td>
+          <td class="price-cell"></td>
+        </tr>
+      </table>
+
+      <div class="summary_box">
+  <h2>סיכום הרכבה</h2>
+  <p id="total-price">מחיר כולל: ₪0</p>
+  <p id="total-wattage">צריכת חשמל: 0W</p>
+  <button id="saveBuildBtn" class="enter_button">שמור את ההרכבה</button>
+</div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+
+  <footer class="site_footer">
+  <p>© 2025 בנו מחשב! כל הזכויות שמורות.</p>
+</footer>
+
 </body>
 </html>

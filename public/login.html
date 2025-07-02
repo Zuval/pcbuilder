@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+  <title>Login</title>
 </head>
 <body>
-    <header>
-        <a href="/">
-            <img src="logo.png" alt="בנו מחשב!" draggable="false" id="other_header">
-        </a>
-        </header>
-    
-        <nav>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox">
-                <a href="/">בית</a>
-            </div>
-            <div class="box" id="yellowbox">
-                <a href="about">אודות</a>
-            </div>
-            <div class="box" id="blackbox">
-                <a href="contact">צור קשר</a>
-            </div>
-            <div class="box" id="yellowbox">
-                <a href="login">התחבר</a>
-            </div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-            <div class="box" id="blackbox"></div>
-            <div class="box" id="yellowbox"></div>
-           </nav>
-    
-    <main class="site_main">
-        <div class="login_box">
-            <h2>התחברות</h2>
-            <div>
-            <form action="/login" method="post">
-               <div class="login_input_field">
-                <input type="email" name="email" placeholder="אי-מייל" required maxlength="255" class="login_inputs">
-            </div>
-        <div class="login_input_field">
-            <input type="password" name="password" placeholder="סיסמה" required minlength="8" maxlength="16" class="login_inputs">
-        </div>
-    <div id="remember_me_register">
-        <div class="align_rmr">
-        <input type="checkbox" id="remember_me_btn">
-        <label for="">זכור אותי</label>
+  <header>
+    <a href="/">
+      <img src="logo.png" alt="בנו מחשב!" draggable="false" id="other_header" />
+    </a>
+  </header>
+  <nav>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox">
+      <a href="/">בית</a>
     </div>
-        <div class="align_rmr">
-    <a href="register" id="register_in_login">הרשמה</a>
+    <div class="box" id="yellowbox">
+      <a href="about">אודות</a>
+    </div>
+    <div class="box" id="blackbox">
+      <a href="contact">צור קשר</a>
+    </div>
+    <div class="box" id="yellowbox">
+  <a href="login" id="auth_link">התחבר</a>
 </div>
+    <div class="box" id="blackbox">
+  <a href="register">הירשם</a>
+</div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+    <div class="box" id="blackbox"></div>
+    <div class="box" id="yellowbox"></div>
+  </nav>
+  <main class="site_main">
+    <div class="login_box">
+      <h2>התחברות</h2>
+      <form action="/login" method="post">
+        <div class="login_input_field">
+          <input type="email" name="email" placeholder="אי-מייל" required />
+        </div>
+        <div class="login_input_field">
+          <input type="password" name="password" placeholder="סיסמה" required />
+        </div>
+        <div id="remember_me_register">
+          <div class="align_rmr">
+            <input type="checkbox" id="remember_me_btn" name="remember" />
+            <label for="remember_me_btn">זכור אותי</label>
+          </div>
+          <div class="align_rmr">
+            <a href="register" id="register_in_login">הרשמה</a>
+          </div>
+        </div>
+        <div id="button_align">
+          <button class="enter_button" type="submit">כניסה</button>
+        </div>
+      </form>
     </div>
-    <div id="button_align"><button class="enter_button" type="submit">כניסה</button></div>
-            </form>
-        </div>
-        </div>
-    </main>
+  </main>
+
+  <footer class="site_footer">
+  <p>© 2025 בנו מחשב! כל הזכויות שמורות.</p>
+</footer>
+
 </body>
 </html>
