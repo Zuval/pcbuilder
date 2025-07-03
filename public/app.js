@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     populateSelects();
 
-    // 🔁 Load last saved build
     fetch(`/last-build?email=${encodeURIComponent(email)}`)
       .then(res => res.json())
       .then(savedBuild => {
@@ -91,7 +90,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       });
 
-    // 💾 Save build functionality
     document.getElementById("saveBuildBtn").addEventListener("click", () => {
       const build = [];
 
