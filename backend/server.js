@@ -50,7 +50,7 @@ app.post("/register", (req, res) => {
   const { email, password, password2 } = req.body;
 
   if (password !== password2) {
-    return res.send("הסיסמאות לא תואמות");
+    return alert("הסיסמאות לא תואמות");
   }
 
   database.run(
